@@ -64,7 +64,6 @@
 		3FE7E0EA1D7CC01B00DC754D /* RulesEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE7E0E81D7CC01B00DC754D /* RulesEditorWindowController.swift */; };
 		3FF2410B1EDB4E0000E524CD /* SwitchMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF2410A1EDB4E0000E524CD /* SwitchMethodViewController.swift */; };
 		3FF655CA20751D1600C8D2FC /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF655C820751D1600C8D2FC /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A3E7D8FE2864968C0048CF9C /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = A3E7D8FD2864968C0048CF9C /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3E7D8FE2864968C0048CF9C /* Sparkle in Frameworks */,
 				3FE7B6DB245DF8450027DB39 /* SmoothOperators in Frameworks */,
 				3F16ECDD23E9D1AC008BC89A /* DefaultsWrapper in Frameworks */,
 				3F15629F23FEDD0000CD0773 /* CoreGeometry in Frameworks */,
@@ -346,7 +344,6 @@
 				3F16ECDC23E9D1AC008BC89A /* DefaultsWrapper */,
 				3F15629E23FEDD0000CD0773 /* CoreGeometry */,
 				3FE7B6DA245DF8450027DB39 /* SmoothOperators */,
-				A3E7D8FD2864968C0048CF9C /* Sparkle */,
 			);
 			productName = Fluor;
 			productReference = 3FCD16A11D79793600C57B22 /* Fluor.app */;
@@ -392,7 +389,6 @@
 				3F16ECDB23E9D1AC008BC89A /* XCRemoteSwiftPackageReference "DefaultsWrapper" */,
 				3F15629D23FEDD0000CD0773 /* XCRemoteSwiftPackageReference "CoreGeometry" */,
 				3FE7B6D9245DF8450027DB39 /* XCRemoteSwiftPackageReference "SmoothOperators" */,
-				A3E7D8FC2864968C0048CF9C /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 3FCD16A21D79793600C57B22 /* Products */;
 			projectDirPath = "";
@@ -806,14 +802,6 @@
 				minimumVersion = 0.4.0;
 			};
 		};
-		A3E7D8FC2864968C0048CF9C /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -831,11 +819,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3FE7B6D9245DF8450027DB39 /* XCRemoteSwiftPackageReference "SmoothOperators" */;
 			productName = SmoothOperators;
-		};
-		A3E7D8FD2864968C0048CF9C /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3E7D8FC2864968C0048CF9C /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
