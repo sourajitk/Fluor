@@ -34,12 +34,11 @@
         <!--Preferences-->
         <scene sceneID="jca-4Z-HAq">
             <objects>
-                <tabViewController title="Preferences" tabStyle="toolbar" id="glG-bk-x2Q" customClass="PreferencesTabViewController" customModule="Fluor" customModuleProvider="target" sceneMemberID="viewController">
+                <tabViewController title="Preferences" selectedTabViewItemIndex="2" tabStyle="toolbar" id="glG-bk-x2Q" customClass="PreferencesTabViewController" customModule="Fluor" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem label="General" identifier="general_tab" image="NSPreferencesGeneral" id="Hob-Dv-Dm7"/>
                         <tabViewItem label="Notifications" identifier="notification_tab" image="NSInfo" id="hM9-Ia-nxv"/>
                         <tabViewItem label="Advanced" identifier="advanced_tab" image="NSAdvanced" id="18q-Zg-Tl1"/>
-                        <tabViewItem label="Updates" identifier="updates_tab" image="NSNetwork" id="dHq-vD-kde"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" drawsBackground="NO" type="noTabsNoBorder" id="74u-gV-eCB">
@@ -55,7 +54,6 @@
                         <segue destination="bdY-l4-Nw7" kind="relationship" relationship="tabItems" id="vU4-rd-oIX"/>
                         <segue destination="qEK-qg-cnW" kind="relationship" relationship="tabItems" id="R7Y-LJ-AmD"/>
                         <segue destination="UoT-kw-xfb" kind="relationship" relationship="tabItems" id="wRt-Fo-0fY"/>
-                        <segue destination="dlC-Ac-YKV" kind="relationship" relationship="tabItems" id="YgV-xl-9Rw"/>
                     </connections>
                 </tabViewController>
                 <customObject id="N1Y-oQ-rKI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -220,7 +218,6 @@
                 </viewController>
                 <customObject id="xpC-Av-Pb6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="eCo-0m-X2M" customClass="LaunchAtLoginController"/>
-                <customObject id="YAM-vM-LLT" customClass="SUUpdater"/>
                 <userDefaultsController representsSharedInstance="YES" id="XlE-y8-iHG"/>
             </objects>
             <point key="canvasLocation" x="772" y="96"/>
@@ -419,9 +416,6 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <connections>
-                                            <binding destination="AeM-5q-gZ3" name="value" keyPath="self.automaticallyChecksForUpdates" id="zrL-1G-Aec"/>
-                                        </connections>
                                     </button>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="750" verticalHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18z-fd-v5J">
                                         <rect key="frame" x="0.0" y="37" width="500" height="16"/>
@@ -432,9 +426,6 @@
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <binding destination="AeM-5q-gZ3" name="value" keyPath="self.automaticallyDownloadsUpdates" id="FMx-vj-v0Z"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <visibilityPriorities>
@@ -451,10 +442,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="500" height="20"/>
                                         <beginningViews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" verticalHuggingPriority="750" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRF-Ao-73C">
-                                                <rect key="frame" x="0.0" y="0.0" width="405" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="20"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oN7-9d-NkH">
-                                                        <rect key="frame" x="-2" y="2" width="79" height="14"/>
+                                                        <rect key="frame" x="-2" y="3" width="79" height="14"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last Checked:" id="TZA-yl-nGe">
                                                             <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -462,16 +453,13 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Bm-jK-K96">
-                                                        <rect key="frame" x="75" y="2" width="102" height="14"/>
+                                                        <rect key="frame" x="75" y="3" width="102" height="14"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Yesterday at 16:28" id="tQx-sm-17A">
                                                             <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" doesRelativeDateFormatting="YES" id="DX2-WR-kjA"/>
                                                             <font key="font" metaFont="message" size="11"/>
                                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
-                                                        <connections>
-                                                            <binding destination="AeM-5q-gZ3" name="value" keyPath="self.lastUpdateCheckDate" id="oRH-3d-Kq9"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <visibilityPriorities>
@@ -486,14 +474,11 @@
                                         </beginningViews>
                                         <endViews>
                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azr-yA-N14">
-                                                <rect key="frame" x="406" y="-7" width="101" height="32"/>
+                                                <rect key="frame" x="405" y="-7" width="102" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Check now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vtq-y9-sm5">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
-                                                <connections>
-                                                    <action selector="checkForUpdates:" target="AeM-5q-gZ3" id="TnE-0H-iGT"/>
-                                                </connections>
                                             </button>
                                         </endViews>
                                         <visibilityPriorities>
@@ -532,7 +517,6 @@
                     </view>
                 </viewController>
                 <customObject id="uno-mT-3BM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="AeM-5q-gZ3" customClass="SUUpdater"/>
             </objects>
             <point key="canvasLocation" x="772" y="783"/>
         </scene>
@@ -759,17 +743,17 @@
             <objects>
                 <viewController storyboardIdentifier="DebugAuthorization" id="kDW-fa-EAS" sceneMemberID="viewController">
                     <view key="view" id="syX-NU-iua">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="109"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="107"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-nQ-Mtz">
-                                <rect key="frame" x="-3" y="-4" width="361" height="115"/>
+                                <rect key="frame" x="-3" y="-4" width="361" height="113"/>
                                 <view key="contentView" id="UVU-VX-cgs">
-                                    <rect key="frame" x="4" y="5" width="353" height="107"/>
+                                    <rect key="frame" x="3" y="3" width="355" height="107"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <gridView horizontalHuggingPriority="750" verticalHuggingPriority="750" xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="8" columnSpacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="csm-81-gAo">
-                                            <rect key="frame" x="20" y="20" width="313" height="67"/>
+                                            <rect key="frame" x="20" y="20" width="315" height="67"/>
                                             <rows>
                                                 <gridRow height="17" id="W3h-VG-AIC"/>
                                                 <gridRow height="17" id="mcm-0X-aet"/>
@@ -814,7 +798,7 @@
                                                 </gridCell>
                                                 <gridCell row="mcm-0X-aet" column="cS3-dY-qCY" id="Pmy-bl-dI3">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BBL-89-YiJ">
-                                                        <rect key="frame" x="22" y="26" width="293" height="16"/>
+                                                        <rect key="frame" x="22" y="26" width="295" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Find and select Fluor in the list" id="IKU-zN-gyv">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -834,7 +818,7 @@
                                                 </gridCell>
                                                 <gridCell row="XHy-gU-rWN" column="cS3-dY-qCY" id="79L-iU-5Ao">
                                                     <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8nb-EH-fYQ">
-                                                        <rect key="frame" x="22" y="1" width="293" height="16"/>
+                                                        <rect key="frame" x="22" y="1" width="295" height="16"/>
                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Activate the Allow Notification from Fluor switch" id="hv4-f4-B7v">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -871,7 +855,6 @@
         <image name="AppleMode" width="16" height="16"/>
         <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSInfo" width="32" height="32"/>
-        <image name="NSNetwork" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="OtherMode" width="16" height="16"/>
     </resources>
